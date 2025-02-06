@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="name-title">
+                <h1>Sarah Martínez</h1>
+                <p>Desarrolladora Web | Diseñadora Gráfica</p>
+            </div>
+            <div class="interactive-frame">
+                <img src="images/foto.jpg" alt="Mi Foto" class="profile-picture">
+                <div class="info-overlay">
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">Sobre Mí</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#portfolio">Portafolio</a></li>
+            <li><a href="#mockup">Mockups</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>Sobre Mí</h2>
+        <p>¡Hola! Soy una ingeniera en informatica que se dedica al desarollo web apasionada por el diseño y la tecnología; con más de 7 años de experiencia profesional, disfruto creando soluciones visuales y funcionales que ayudan a las personas.</p>
+    </section>
+    <section id="skills">
+        <h2>Habilidades</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Desarrollo Web</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript (React, Angular)</li>
+                    <li>Python (Tkinter, PYQT, Django,etc)</li>
+                    <li>C# .NET</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Diseño Gráfico</h3>
+                <ul>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Figma</li>
+                    <li>Diseño UX/UI</li>
+                    <li>Adobe Premiere</li>
+                    <li>Adobe After Effects</li>
+                    <li>Diseño de Redes Sociales</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Otras Habilidades</h3>
+                <ul>
+                    <li>Git y GitHub</li>
+                    <li>SEO</li>
+                    <li>Scrum</li>
+                    <li>Inglés Avanzado</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio">
+        <h2>Portafolio</h2>
+        <p>Algunos trabajos profesionales e informales que he realizado</p>
+        <div class="gallery">
+            <!-- Fila 1 -->
+            <div class="gallery-item">
+                <img src="images/trabajo1.jpg" alt="Trabajo 1" class="gallery-image" data-index="0">
+            </div>
+            <div class="gallery-item">
+                <img src="images/trabajo2.jpg" alt="Trabajo 2" class="gallery-image" data-index="1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/trabajo3.jpg" alt="Trabajo 3" class="gallery-image" data-index="2">
+            </div>
+    
+            <!-- Fila 2 -->
+            <div class="gallery-item">
+                <img src="images/trabajo4.jpg" alt="Trabajo 4" class="gallery-image smaller-image" data-index="3">
+            </div>
+            <div class="gallery-item">
+                <img src="images/trabajo5.jpg" alt="Trabajo 5" class="gallery-image smaller-image" data-index="4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/trabajo6.jpg" alt="Trabajo 6" class="gallery-image smaller-image" data-index="5">
+            </div>
+            <div class="gallery-item">
+                <img src="images/trabajo7.jpg" alt="Trabajo 7" class="gallery-image smaller-image" data-index="6">
+            </div>
+        </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Imagen del portafolio">
+            <p id="modal-description"></p> <!-- Descripción del proyecto -->
+            <button class="nav-button prev">&#10094;</button>
+            <button class="nav-button next">&#10095;</button>
+        </div>
+    </div>
+</section>
+<section id="mockup">
+    <h2>Mockups</h2>
+    <p>Mockups para marcas en las que he trabajado</p>
+    <div class="gallery">
+        <!-- Fila 1 -->
+        <div class="gallery-item">
+            <img src="images/mockup1.jpg" alt="Trabajo 1" class="gallery-image" data-index="7">
+        </div>
+        <div class="gallery-item">
+            <img src="images/mockup2.jpg" alt="Trabajo 2" class="gallery-image" data-index="8">
+        </div>
+        <div class="gallery-item">
+            <img src="images/mockup3.jpg" alt="Trabajo 3" class="gallery-image" data-index="9">
+        </div>
+
+        <!-- Fila 2 -->
+        <div class="gallery-item">
+            <img src="images/mockup4.jpg" alt="Trabajo 4" class="gallery-image smaller-image" data-index="10">
+        </div>
+        <div class="gallery-item">
+            <img src="images/mockup5.jpg" alt="Trabajo 5" class="gallery-image smaller-image" data-index="11">
+        </div>
+        <div class="gallery-item">
+            <img src="images/mockup6.jpg" alt="Trabajo 6" class="gallery-image smaller-image" data-index="12">
+        </div>
+    </div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+        <img id="modal-image" src="" alt="Imagen del portafolio">
+        <p id="modal-description"></p> <!-- Descripción del proyecto -->
+        <button class="nav-button prev">&#10094;</button>
+        <button class="nav-button next">&#10095;</button>
+    </div>
+</div>
+</section>
+
+
+    </section>
+    </section>
+    <footer>
+        <p>&copy; 2024 Mi Nombre. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
