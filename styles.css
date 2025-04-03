@@ -134,6 +134,7 @@ form label {
 }
 
 /* Estilos para la galería */
+<<<<<<< HEAD
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -160,6 +161,79 @@ form label {
 
 .gallery-image:hover {
     transform: scale(1.05);
+=======
+/* Estilos generales para la galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para cada item de la galería */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    aspect-ratio: 1/1; /* Mantener relación cuadrada */
+}
+
+/* Estilos para las imágenes */
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8;
+    transition: transform 0.3s ease;
+    display: block;
+    /* Optimización para móviles */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Efecto hover (solo en desktop) */
+@media (hover: hover) {
+    .gallery-image:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Estilos para imágenes pequeñas (4,5,6) */
+.smaller-image {
+    max-width: 100%;
+    object-fit: contain;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+}
+
+/* Media queries para responsive */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+    
+    .gallery-item {
+        aspect-ratio: 1/1;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+        gap: 10px;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 16/9; /* Rectangular en móviles */
+    }
+    
+    .smaller-image {
+        padding: 5px;
+    }
+
 }
 
 /* Estilos para las imágenes más pequeñas */
@@ -294,4 +368,23 @@ form label {
 .skill-category li {
     margin-bottom: 10px;
     color: #555;
+
+}
+/* mejor rendimiento en móviles */
+.gallery-image {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Opcional: Efecto de carga progresiva */
+.gallery-image {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+
 }

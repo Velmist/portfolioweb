@@ -7,19 +7,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Array de imágenes (puedes agregar más)
     const images = [
-        "images/trabajo1.jpg",
-        "images/trabajo2.jpg",
-        "images/trabajo3.jpg",
-        "images/trabajo4.jpg",
-        "images/trabajo5.jpg",
-        "images/trabajo6.jpg",
-        "images/trabajo7.jpg",
-        "images/mockup1.jpg",
-        "images/mockup2.jpg",
-        "images/mockup3.jpg",
-        "images/mockup4.jpg",
-        "images/mockup5.jpg",
-        "images/mockup6.jpg",
+        "images/trabajo1.webp",
+        "images/trabajo2.webp",
+        "images/trabajo3.webp",
+        "images/trabajo4.webp",
+        "images/trabajo5.webp",
+        "images/trabajo6.webp",
+        "images/trabajo7.webp",
+        "images/mockup1.webp",
+        "images/mockup2.webp",
+        "images/mockup3.webp",
+        "images/mockup4.webp",
+        "images/mockup5.webp",
+        "images/mockup6.webp",
 
     ];
 
