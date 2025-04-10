@@ -1,92 +1,65 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-image");
+    const modalDesc = document.getElementById("modal-description");
     const closeBtn = document.querySelector(".close");
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
-
-    // Array de imágenes (puedes agregar más)
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    
     const images = [
-        "images/trabajo1.webp",
-        "images/trabajo2.webp",
-        "images/trabajo3.webp",
-        "images/trabajo4.webp",
-        "images/trabajo5.webp",
-        "images/trabajo6.webp",
-        "images/trabajo7.webp",
-        "images/mockup1.webp",
-        "images/mockup2.webp",
-        "images/mockup3.webp",
-        "images/mockup4.webp",
-        "images/mockup5.webp",
-        "images/mockup6.webp",
+        { src: "images/trabajo1.webp", desc: "Montaje para mis redes sociales" },
+        { src: "images/trabajo2.webp", desc: "Flyer en colaboracion para un torneo organizado" },
+        { src: "images/trabajo3.webp", desc: "Trabajo para redes sociales" },
+        { src: "images/trabajo4.webp", desc: "Parte de un portfolio para una empresa de helados" },
+        { src: "images/trabajo5.webp", desc: "Flyer para una empresa de licores" },
+        { src: "images/trabajo6.webp", desc: "Flyer para una empresa de licores" },
 
+        //mockups
+        { src: "images/mockup1.webp", desc: "Marca realizada para un proyecto de grado" },
+        { src: "images/mockup2.webp", desc: "Mockup del logo de marca" },
+        { src: "images/mockup3.webp", desc: "Mockup del logo de marca" },
+        { src: "images/mockup4.webp", desc: "Practica de mockup con logo existente" },
+        { src: "images/mockup5.webp", desc: "Diseño de logo basado en persona existente" },
+        { src: "images/mockup6.webp", desc: "Mockup del logo de marca" }
     ];
-
-    const descriptions = [
-        "Descripción del Trabajo 1.",
-        "Descripción del Trabajo 2.",
-        "Descripción del Trabajo 3.",
-        "Descripción del Trabajo 4.",
-        "Descripción del Trabajo 5.",
-        "Descripción del Trabajo 6."
-    ];
-
+    
     let currentIndex = 0;
-
-    // Función para abrir el modal y mostrar la imagen seleccionada
-    function openModal(index) {
-        currentIndex = index;
-        modalImg.src = images[currentIndex];
-        modal.style.display = "block";
-    }
-
-    // Función para cambiar a la imagen anterior
-    function showPrev() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        modalImg.src = images[currentIndex];
-    }
-
-    // Función para cambiar a la siguiente imagen
-    function showNext() {
-        currentIndex = (currentIndex + 1) % images.length;
-        modalImg.src = images[currentIndex];
-    }
-
-    // Añadir evento click a cada imagen de la galería
-    const galleryImages = document.querySelectorAll(".gallery-image");
-    galleryImages.forEach((img, index) => {
-        img.addEventListener("click", function () {
-            openModal(index);
+    
+    // Abrir modal
+    document.querySelectorAll(".gallery-image").forEach((img, index) => {
+        img.addEventListener("click", () => {
+            currentIndex = parseInt(img.getAttribute("data-index"));
+            updateModal();
+            modal.style.display = "block";
         });
     });
-
-    // Cerrar el modal al hacer clic en la "x"
-    closeBtn.addEventListener("click", function () {
+    
+    // Cerrar modal
+    closeBtn.addEventListener("click", () => {
         modal.style.display = "none";
     });
-
-    // Cerrar el modal al hacer clic fuera de la imagen
-    modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
+    
+    // Navegación
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateModal();
     });
-
-    // Navegación entre imágenes
-    prevButton.addEventListener("click", showPrev);
-    nextButton.addEventListener("click", showNext);
-
-    // Navegación con teclado
-    document.addEventListener("keydown", function (event) {
-        if (modal.style.display === "block") {
-            if (event.key === "ArrowLeft") {
-                showPrev();
-            } else if (event.key === "ArrowRight") {
-                showNext();
-            } else if (event.key === "Escape") {
-                modal.style.display = "none";
-            }
+    
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateModal();
+    });
+    
+    // Actualizar contenido del modal
+    function updateModal() {
+        modalImg.src = images[currentIndex].src;
+        modalDesc.textContent = images[currentIndex].desc;
+    }
+    
+    // Cerrar al hacer clic fuera
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
         }
     });
 });
